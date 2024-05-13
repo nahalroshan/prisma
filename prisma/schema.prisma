@@ -1,0 +1,9 @@
+//define client
+generator client{
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url = 
+}
