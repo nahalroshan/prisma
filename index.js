@@ -33,4 +33,17 @@ app.delete("/:id", async (req, res) => {
   const deletedUser = await prisma.user.delete({ where: { id: parseInt(id) } });
   res.json(deletedUser);
 });
+app.delete("/", async (req, res) => {
+    const id = req.params.id;
+  
+    const deletedUser = await prisma.user.deleteMany();
+    res.json(deletedUser);
+  });
+  
+app.get("/:id", async (req, res) => {
+    const id = req.params.id;
+  
+    const deletedUser = await prisma.user.findMany({ where: { id: parseInt(id) } });
+    res.json(deletedUser);
+  });
 app.listen(3001, () => console.log(`Server running port ${3001}`));
